@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myown</title>
-    <link rel="stylesheet" href="style.css">
-  
+    <title>STONE PAPER SCISSOR</title>
+    <script>
+        let playgame=confirm("Shall we play rock,paper,scissor?");
+if(playgame){
+    let playerchoice=prompt("What's your choice rock or paper or scissor");
+    if(playerchoice){
+        let play=playerchoice.trim().toLowerCase();
+        if(play==="rock"||play==="paper"||play==="scissor"){
+            let computerchoice=Math.floor(Math.random()*3)+1;
+            let computer=computerchoice===1?"rock":computerchoice===2?"paper":"scissor";
+            let result = play === computer
+            ?"tie game"
+            :(play === "rock" && computer === "paper")
+            ?`Player: ${play}\nComputer: ${computer}\n computer wins!` 
+            :(play === "scissor"&& computer === "rock")
+            ?`Player: ${play}\nComputer: ${computer}\n computer wins!`
+            :(play === "paper"&& computer === "scissor")
+            ?`Player:${play}\nComputer:${computer}\n computer wins!`
+            :`Player:${play}\n Computer:${computer}\n player wins!`;
+            alert(result);
+            let playagain = confirm("Play again?");
+            playagain?location.reload():alert("OK!thanks for playing.");
+        }
+        else{
+            alert("You didn't enter rock,paper or scissor"); 
+        }
+    }
+    else{
+        alert("OK, I think you have changed your mind!")
+    }
+
+}
+else{
+    alert("OK! may be next time.")
+}
+    </script>
 </head>
 <body>
-    <form>
-        
-        <h1>Login</h1>
-        <label>Username</label>
-        <input type="text">
-        <label>Password</label>
-        <input type="Password">
-        <button>Login</button>
-        <a>Forget Password?</a>
-        
-    </form>
     
 </body>
-</html>
+</html> 
